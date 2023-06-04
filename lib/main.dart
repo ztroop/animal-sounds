@@ -1,5 +1,7 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,21 +27,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Map> animals = [
-    {'image': 'pictures/cat.jpg', 'sound': 'audio/cat.mp3'},
-    {'image': 'pictures/cow.jpg', 'sound': 'audio/cow.mp3'},
-    {'image': 'pictures/donkey.jpg', 'sound': 'audio/donkey.mp3'},
-    {'image': 'pictures/elephant.jpg', 'sound': 'audio/elephant.mp3'},
-    {'image': 'pictures/frog.jpg', 'sound': 'audio/frog.mp3'},
-    {'image': 'pictures/goat.jpg', 'sound': 'audio/goat.mp3'},
-    {'image': 'pictures/horse.jpg', 'sound': 'audio/horse.mp3'},
-    {'image': 'pictures/lion.jpg', 'sound': 'audio/lion.mp3'},
-    {'image': 'pictures/peacock.jpg', 'sound': 'audio/peacock.mp3'},
-    {'image': 'pictures/pig.jpg', 'sound': 'audio/pig.mp3'},
-    {'image': 'pictures/wolf.jpg', 'sound': 'audio/wolf.mp3'},
-  ];
-
+  List animals = [];
   final player = AudioPlayer();
+
+  @override
+  void initState() {
+    super.initState();
+    loadAnimals().then((loadedAnimals) {
+      setState(() {
+        animals = loadedAnimals;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,4 +60,9 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+Future<List> loadAnimals() async {
+  String jsonString = await rootBundle.loadString('assets/animals.json');
+  return json.decode(jsonString);
 }

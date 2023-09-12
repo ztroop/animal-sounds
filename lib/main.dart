@@ -54,7 +54,14 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () => player.play(AssetSource(animals[index]['sound'])),
-            child: Image.asset(animals[index]['image'], fit: BoxFit.cover),
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(animals[index]['image']),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
           );
         },
       ),

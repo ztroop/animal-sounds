@@ -5,4 +5,4 @@ Royalty-free sounds and images were used, so you can rest easy.
 
 ## Motivation
 
-I built this specifically for my daughters whom I love dearly. Figured other people might be interested as well.
+I built this specifically for my daughters whom I love dearly. I thought other people might be interested as well.

@@ -1,16 +1,8 @@
 # animal_sounds
 
-A new Flutter project.
+A simple mobile application that plays various animal sounds. Ad-free with privacy in-mind.
+Royalty-free sounds and images were used, so you can rest easy.
 
-## Getting Started
+## Motivation
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I built this specifically for my daughters whom I love dearly. Figured other people might be interested as well.
